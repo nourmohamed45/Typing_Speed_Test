@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #3C486B;
+  --text-color: #F9D949;
+  --container-color: #F0F0F0;
+  --active-color: #F45050;
+  --back-text: #F9D949;
+  --front-text: #F45050;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.game .name {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.game .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.game .container .message {
+  padding: 20px 0px;
+  color: var(--text-color);
+  font-size: 20px;
+  text-align: center;
+}
+
+.game .container .message .lvl,
+.game .container .message .seconds {
+  color: var(--active-color);
+}
+
+.game .container .message span::after {
+  content: " ]";
+}
+
+.game .container .message span::before {
+  content: "[ ";
+}
+
+.game .container .select-level label {
+  color: var(--text-color);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.game .container .select-level select {
+  padding: 5px;
+  width: 100px;
+  background-color: var(--container-color);
+  color: var(--background-color);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.game .container .start,
+.game .container .the-word {
+  background-color: var(--back-text);
+  color: var(--front-text);
+  font-size: 25px;
+  padding: 15px 0px;
+  width: 300px;
+  margin: 20px 0px;
+  text-align: center;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+.game .container .start {
+  cursor: pointer;
+  user-select: none;
+}
+
+.game .container .the-word {
+  font-weight: bold;
+  display: none;
+  user-select: none;
+}
+
+.game .container .the-word-and-again {
+  display: flex;
+  position: relative;
+}
+
+.game .container .the-word-and-again button {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  background-color: #f45050ac;
+  color: var(--container-color);
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  border-radius: 50px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  transition: .2s linear;
+  -webkit-transition: .2s linear;
+  -moz-transition: .2s linear;
+  -ms-transition: .2s linear;
+  -o-transition: .2s linear;
+}
+
+.game .container .the-word-and-again button:hover {
+  background-color: var(--active-color);
+}
+
+.game .container .input {
+  width: 500px;
+  background-color: var(--container-color);
+  border: none;
+  outline: none;
+  padding: 10px 0px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: var(--front-text);
+  margin-bottom: 20px;
+}
+
+.game .container .input::placeholder {
+  color: var(--background-color);
+  opacity: 50%;
+}
+
+
+
+.game .container .upcoming-words,
+.game .container .settings {
+  width: 800px;
+  background-color: var(--container-color);
+  padding: 20px;
+  text-align: center;
+  color: var(--background-color);
+  font-weight: bold;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game .container .upcoming-words {
+  padding: 15px;
+}
+
+.game .container .upcoming-words div {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: var(--back-text);
+  margin: 5px 5px;
+  color: var(--front-text);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.game .container .settings {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.game .container .settings .time span,
+.game .container .settings .score .got,
+.game .container .settings .score .total {
+  color: var(--front-text);
+}
+
+.game .container .finish {
+  margin-top: 25px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.game .container .finish .good {
+  color: var(--text-color);
+}
+
+.game .container .finish .bad {
+  color: var(--front-text);
+}
